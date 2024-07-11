@@ -1,52 +1,49 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
 
-.pa{
-   display: flex;
-   height: auto;
+.pa {
+    display: flex;
+    height: auto;
 }
 
-.hp{
+.hp {
     height: 195px;
     width: 600px;
-    border: 3px, black, solid;
+    border: 3px solid black;
 }
 
-.inp{
+.inp {
     height: 195px;
     width: 2000px;;
-    border: 3px, black, solid;
+    border: 3px solid black;
 }
 
-.gg{
+.gg {
     display: flex;
     flex-direction: column;
-    
+
 }
 
-.vid{
-    border: 3px, black, solid;
+.vid {
+    border: 3px solid black;
     height: 490px;
     width: auto;
-    background:url('kkk.jpg');
-    background-position: center;
     background-size: 2600px 650px;
-    background-repeat: no-repeat;
+    background: url('main_background.jpg') no-repeat center;
     text-align: center;
 }
 
-.vid.img{
+.vid.img {
     padding: 500px;
 }
-   
-.pa2{
-    display: flex;  
+
+.pa2 {
+    display: flex;
 }
 
-
-.inp{
+.inp {
     --hue: var(--hue-neutral);
     padding: 0;
     margin: 0;
@@ -58,68 +55,66 @@
     background-color: hsl(var(--hue), 100%, 20%);
 }
 
-.gg2{
+.gg2 {
     display: flex;
     flex-direction: column;
-    
 }
 
-
-.kv{
+.kv {
     position: absolute;
     top: 50px;
     right: 100px;
 }
-#kvad{
 
+#kvad {
     height: 300px;
     width: 350px;
     background-color: white;
 }
 
-  
-  .bbb{
+.bbb {
     background-color: rgb(14, 131, 234);
     border-color: blue;
     color: white;
-  }
-  .bbb:hover{
+}
+
+.bbb:hover {
     border-color: chartreuse;
-  }
+}
 
-
-  *, *::before, *::after {
+*, *::before, *::after {
     box-sizing: border-box;
     font-family: Gotham Rounded;
-  }
-  
-  :root {
+}
+
+:root {
     --hue-neutral: 200;
     --hue-wrong: 0;
     --hue-correct: 145;
-  }
-  
-  
-  
-  
-  
-  .container {
+}
+
+.hpoint {
+    height: 100px;
+    width: 100px;
+}
+
+.container {
     width: 800px;
     max-width: 80%;
     background-color: white;
     border-radius: 5px;
     padding: 10px;
     box-shadow: 0 0 10px 2px;
-  }
-  
-  .btn-grid {
+}
+
+.btn-grid {
     display: grid;
     grid-template-columns: repeat(2, auto);
     gap: 10px;
     margin: 20px 0;
-  }
-  
-  .btn {
+}
+
+.btn {
     --hue: var(--hue-neutral);
     border: 1px solid hsl(var(--hue), 100%, 30%);
     background-color: hsl(var(--hue), 100%, 50%);
@@ -127,37 +122,38 @@
     padding: 5px 10px;
     color: white;
     outline: none;
-  }
-  
-  .btn:hover {
+}
+
+.btn:hover {
     border-color: black;
-  }
-  
-  .btn.correct {
+}
+
+.btn.correct {
     --hue: var(--hue-correct);
     color: black;
-  }
-  
-  .btn.wrong {
+}
+
+.btn.wrong {
     --hue: var(--hue-wrong);
-  }
-  
-  .start-btn, .next-btn {
+}
+
+.start-btn, .next-btn {
     font-size: 1.5rem;
     font-weight: bold;
     padding: 10px 20px;
-  }
-  
-  .controls {
+}
+
+.controls {
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-  
-  .hide {
+}
+
+.hide {
     display: none;
-  }
-  * {
+}
+
+* {
     box-sizing: border-box;
     margin: 0px;
     padding: 0px;
@@ -171,7 +167,6 @@
     justify-content: center;
     align-items: center;
 }
-
 
 .eru {
     width: 30%;
@@ -194,4 +189,43 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.modal-overlay {
+    background: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.modal-wrapper {
+    width: 300px;
+    height: 300px;
+    background: ghostwhite;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.modal-content {
+    margin: 20px;
+    max-width: 210px;
+    width: 100%;
+}
+
+.hide {
+    display: none;
+}
+
+.tre {
+    position: absolute;
+}
+
+.rotate-question {
+    transform: rotate(180deg);
 }

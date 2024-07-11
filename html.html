@@ -1,45 +1,73 @@
-<html>
-    <head>
-        <link rel="stylesheet" href="css.css">
-    </head>
-    <body>
-        <div class="gg">
-            <div class="vid">
-              <img src="zk6-unscreen.gif" alt="">
-            </div>
-        <div class="pa">
-                <div class="hp">
-                    <img src="Untitled - Frame 0 - Render 3.png" alt="hp" width="100px" height="100px">
-                    <div class="er">
-                        <div class="eru">
-                            <div id="counter-value">3</div>
-                        </div>
-                    </div>
-                
-                    <script defer src="fgh.mjs"></script>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <script defer src="index.js"></script>
+    <title>mushroom trip</title>
+</head>
+<body>
+<div class="modal-overlay " id="modal-start">
+    <div class="modal-wrapper">
+        <div class="close-btn-wrapper">
+            <button class="tre" id="btn-start">Начать</button>
+        </div>
+    </div>
+</div>
+<div class="modal-overlay hide " id="modal-win">
+    <div class="modal-wrapper">
+        <div class="close-btn-wrapper">
+            <button class="tre" id="btn-win">Играть заново</button>
+        </div>
+    </div>
+</div>
+<div class="modal-overlay hide" id="modal-gameover">
+    <div class="modal-wrapper">
+        <div class="close-btn-wrapper">
+            <button class="tre" id="btn-gameover">Начать с начала</button>
+        </div>
+        <div class="modal-content">
+            GAME OVER
+        </div>
+    </div>
+</div>
+
+<div class="gg">
+    <div class="vid">
+        <img src="hedgehog.gif" alt="hedgehog">
+    </div>
+
+    <div class="pa">
+        <div class="hp">
+            <img src="heart.png" alt="heart" width="100" height="100">
+            <div class="er">
+                <div class="eru">
+                    <div id="counter-value" class="hpoint">3</div>
                 </div>
-                <div class="inp">
-                    <div class="gg2">
-                        <div class="pa2">
-                            <script defer src="gh.mjs"></script>
-                            <div class="container">
-                                <div id="question-container" class="hide">
-                                  <div id="question">вопрос</div>
-                                  <div id="answer-buttons" class="btn-grid">
-                                    <button class="btn" id="bt">Answer 1</button>
-                                    <button class="btn" id="bt">Answer 2</button>
-                                    <button class="btn" id="bt">Answer 3</button>
-                                    <button class="btn" id="bt">Answer 4</button>
-                                  </div>
-                                </div>
-                                <div class="controls">
-                                  <button id="start-btn" class="start-btn btn">Начать</button>
-                                  <button id="next-btn" class="next-btn btn hide">Следующий</button>
-                                </div>
+            </div>
+        </div>
+        <div class="inp">
+            <div class="gg2">
+                <div class="pa2">
+                    <div class="container">
+                        <div id="question-container" class="hide">
+                            <div id="question">вопрос</div>
+                            <div id="answer-buttons" class="btn-grid">
+                                <button class="btn">Answer 1</button>
+                                <button class="btn">Answer 2</button>
+                                <button class="btn">Answer 3</button>
+                                <button class="btn">Answer 4</button>
+                            </div>
+                        </div>
+                        <div class="controls">
+                            <button id="next-btn" class="next-btn btn hide">Следующий</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </body>
+    </div>
+</div>
+</body>
 </html>
