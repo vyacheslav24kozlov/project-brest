@@ -1,5 +1,39 @@
 let index = 3;
-let shuffledQuestions, currentQuestionIndex;
+const questions = [
+  {
+    question: 'сколько будет 2+2?',
+    answers: [
+      {text: '4', correct: true},
+      {text: '22', correct: false}
+    ]
+  },
+  {
+    question: 'Утром с ней прощаюсь,Вечером встречаюсь.Стула она ниже,Она всех мне ближе.',
+    answers: [
+      {text: 'кровать', correct: true},
+      {text: 'девушка', correct: false},
+      {text: 'табуретка', correct: false},
+    ]
+  },
+  {
+    question: 'веб-разработка это весело?',
+    answers: [
+      {text: 'Kinda', correct: false},
+      {text: 'YES!!!', correct: true},
+      {text: 'Um no', correct: false},
+      {text: 'IDK', correct: false}
+    ]
+  },
+  {
+    question: 'сколько будет 4 * 2?',
+    answers: [
+      {text: '6', correct: false},
+      {text: '8', correct: true}
+    ]
+  }
+]
+let shuffledQuestions = questions.sort(() => Math.random() - .5);
+let currentQuestionIndex = 0;
 
 const counterValue = document.getElementById('counter-value');
 const nextButton = document.getElementById('next-btn');
@@ -8,12 +42,9 @@ const questionElement = document.getElementById('question');
 const answerButtonsElement = document.getElementById('answer-buttons');
 const modalGameOver = document.getElementById('modal-gameover');
 const btnGameOver = document.getElementById('btn-gameover');
-const modalStart = document.getElementById('modal-start');
-const btnStart = document.getElementById('btn-start');
 const modalWin = document.getElementById('modal-win');
 const btnWin = document.getElementById('btn-win');
 
-btnStart.addEventListener('click', startClick);
 btnGameOver.addEventListener('click', btnGameOverClick);
 btnWin.addEventListener('click', btnGameOverClick);
 nextButton.addEventListener('click', () => {
@@ -21,13 +52,8 @@ nextButton.addEventListener('click', () => {
     setNextQuestion()
 });
 
-
-function startClick() {
-  modalStart.classList.add('hide')
-  shuffledQuestions = questions.sort(() => Math.random() - .5)
-  currentQuestionIndex = 0
-  questionContainerElement.classList.remove('hide')
-  setNextQuestion()
+window.onload = () => {
+  setNextQuestion();
 }
 
 function decrementCounter() {
@@ -48,7 +74,6 @@ function btnGameOverClick() {
   modalWin.classList.add('hide')
   setNextQuestion()
 }
-
 
 function setNextQuestion() {
   resetState()
@@ -106,37 +131,3 @@ function clearStatusClass(element) {
   element.classList.remove('correct')
   element.classList.remove('wrong')
 }
-
-const questions = [
-  {
-    question: 'сколько будет 2+2?',
-    answers: [
-      {text: '4', correct: true},
-      {text: '22', correct: false}
-    ]
-  },
-  {
-    question: 'Утром с ней прощаюсь,Вечером встречаюсь.Стула она ниже,Она всех мне ближе.',
-    answers: [
-      {text: 'кровать', correct: true},
-      {text: 'девушка', correct: false},
-      {text: 'табуретка', correct: false},
-    ]
-  },
-  {
-    question: 'веб-разработка это весело?',
-    answers: [
-      {text: 'Kinda', correct: false},
-      {text: 'YES!!!', correct: true},
-      {text: 'Um no', correct: false},
-      {text: 'IDK', correct: false}
-    ]
-  },
-  {
-    question: 'сколько будет 4 * 2?',
-    answers: [
-      {text: '6', correct: false},
-      {text: '8', correct: true}
-    ]
-  }
-]
