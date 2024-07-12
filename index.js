@@ -50,7 +50,8 @@ const vid = document.getElementById('video');
 const grib1 = document.getElementById('gr');
 const grib2 = document.getElementById('gry');
 
-grib1.addEventListener('click', increment);
+grib1.addEventListener('click', positiveGrib);
+grib2.addEventListener('click', negativeGrib);
 btnGameOver.addEventListener('click', btnGameOverClick);
 btnWin.addEventListener('click', btnGameOverClick);
 nextButton.addEventListener('click', () => {
@@ -62,7 +63,15 @@ window.onload = () => {
   setNextQuestion();
 }
 
-function increment() {
+function negativeGrib() {
+  grib.classList.add('hide');
+  vid.classList.remove('hide');
+  questionContainerElement.classList.remove("hide");
+  setNextQuestion();
+  questionElement.classList.add("rotate-question");
+}
+
+function positiveGrib() {
   grib.classList.add('hide');
   vid.classList.remove('hide');
   index++;
