@@ -1,4 +1,3 @@
-let index = 3;
 const questions = [
   {
     question: 'сколько будет 2+2?',
@@ -32,6 +31,8 @@ const questions = [
     ]
   }
 ]
+
+let index = 3;
 let shuffledQuestions = questions.sort(() => Math.random() - .5);
 let currentQuestionIndex = 0;
 
@@ -44,16 +45,30 @@ const modalGameOver = document.getElementById('modal-gameover');
 const btnGameOver = document.getElementById('btn-gameover');
 const modalWin = document.getElementById('modal-win');
 const btnWin = document.getElementById('btn-win');
+const grib = document.getElementById('gribu');
+const vid = document.getElementById('video');
+const grib1 = document.getElementById('gr');
+const grib2 = document.getElementById('gry');
 
+grib1.addEventListener('click', increment);
 btnGameOver.addEventListener('click', btnGameOverClick);
 btnWin.addEventListener('click', btnGameOverClick);
 nextButton.addEventListener('click', () => {
-    currentQuestionIndex++
-    setNextQuestion()
+  currentQuestionIndex++
+  setNextQuestion()
 });
 
 window.onload = () => {
   setNextQuestion();
+}
+
+function increment() {
+  grib.classList.add('hide');
+  vid.classList.remove('hide');
+  index++;
+  counterValue.innerHTML = index;
+  setNextQuestion();
+  questionContainerElement.classList.remove("hide");
 }
 
 function decrementCounter() {
@@ -61,6 +76,10 @@ function decrementCounter() {
   counterValue.innerHTML = index;
   if (index === 0) {
     modalGameOver.classList.remove('hide');
+  } else if (index === 1) {
+    questionContainerElement.classList.add("hide");
+    vid.classList.add('hide');
+    grib.classList.remove('hide');
   }
 }
 
@@ -74,6 +93,7 @@ function btnGameOverClick() {
   modalWin.classList.add('hide')
   setNextQuestion()
 }
+
 
 function setNextQuestion() {
   resetState()
