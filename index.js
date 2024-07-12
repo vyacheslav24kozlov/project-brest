@@ -55,7 +55,8 @@ grib2.addEventListener('click', negativeGrib);
 btnGameOver.addEventListener('click', btnGameOverClick);
 btnWin.addEventListener('click', btnGameOverClick);
 nextButton.addEventListener('click', () => {
-  currentQuestionIndex++
+  currentQuestionIndex++;
+  questionElement.classList.remove("rotate-question");
   setNextQuestion()
 });
 
@@ -134,13 +135,13 @@ function resetState() {
 function selectAnswer(e) {
   const selectedButton = e.target
   const correct = selectedButton.dataset.correct
-  if (!correct) {
-    decrementCounter();
-  }
-  Array.from(answerButtonsElement.children).forEach(button => {
-    setStatusClass(button, button.dataset.correct)
-  })
   if (shuffledQuestions.length > currentQuestionIndex + 1) {
+    if (!correct) {
+      decrementCounter();
+    }
+    Array.from(answerButtonsElement.children).forEach(button => {
+      setStatusClass(button, button.dataset.correct)
+    })
     nextButton.classList.remove('hide')
   } else {
     modalWin.classList.remove('hide')
